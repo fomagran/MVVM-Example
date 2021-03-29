@@ -21,8 +21,8 @@ enum CoffeeSize:String,Codable {
 }
 
 struct Order :Codable{
-    let name:String
-    let email:String
-    let type:CoffeeType
-    let size:CoffeeSize
+    var name:String?
+    var email:String?
+    var type:CoffeeType?
+    var size:CoffeeSize?
 }

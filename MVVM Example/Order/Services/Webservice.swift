@@ -15,13 +15,13 @@ enum NetworkError:Error {
     
 }
 
-struct Resouce<T:Codable> {
+struct Resource<T:Codable> {
     let url:URL
 }
 
 
 class Webservice {
-    func load<T>(resource:Resouce<T>,completion:@escaping(Result<T,NetworkError>) -> Void) {
+    func load<T>(resource:Resource<T>,completion:@escaping(Result<T,NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: resource.url) { data,response,error in
             guard let data = data,error == nil else {
                 completion(.failure(.domainError))
