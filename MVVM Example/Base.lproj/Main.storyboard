@@ -113,7 +113,10 @@
                             <constraint firstItem="56L-U1-BYe" firstAttribute="leading" secondItem="Tf5-dd-tH1" secondAttribute="leading" constant="20" id="sUW-BG-c3D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1Ht-Gf-tkc"/>
+                    <navigationItem key="navigationItem" id="1Ht-Gf-tkc">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="jB4-oY-nHw"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="o3Q-17-BZR"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVo-mm-RJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
