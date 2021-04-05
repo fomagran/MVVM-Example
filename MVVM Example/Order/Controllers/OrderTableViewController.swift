@@ -17,6 +17,14 @@ class OrderTableViewController: UITableViewController {
         populateOrders()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nav = segue.destination as? UINavigationController,
+              let addOrderVC = nav.viewControllers.first as? AddViewController else {
+            fatalError()
+        }
+        addOrderVC.delegate = self
+    }
+    
     private func populateOrders() {
         
         Webservice().load(resource: Order.all) { [weak self](result) in
@@ -57,5 +65,22 @@ class OrderTableViewController: UITableViewController {
         
         return cell
     }
+    
 
+}
+
+extension OrderTableViewController:AddOrderDelegate {
+    
+    func addOrderViewControllerDidSave(order: Order, controller: UIViewController) {
+
+        controller.dismiss(animated: true, completion: nil)
+        let orderViewModel = OrderViewModel(order: order)
+        self.orderListViewModel.ordersViewModel.append(orderViewModel)
+        self.tableView.insertRows(at: [IndexPath.init(row: self.orderListViewModel.ordersViewModel.count-1, section: 0)], with: .automatic)
+    }
+    
+    func addOrderViewControllerDidClose(contrlloer: UIViewController) {
+        contrlloer.dismiss(animated: true, completion: nil)
+    }
+    
 }

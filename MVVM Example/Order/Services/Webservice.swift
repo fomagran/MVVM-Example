@@ -45,7 +45,6 @@ class Webservice {
                 completion(.failure(.domainError))
                 return
             }
-            
             let result = try? JSONDecoder().decode(T.self, from: data)
             if let result = result {
                 DispatchQueue.main.async {

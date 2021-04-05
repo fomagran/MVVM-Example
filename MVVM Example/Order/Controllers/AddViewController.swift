@@ -7,13 +7,21 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+protocol AddOrderDelegate {
+    func addOrderViewControllerDidSave(order:Order,controller:UIViewController)
+    func addOrderViewControllerDidClose(contrlloer:UIViewController)
+}
+
+class AddViewController: UIViewController{
+  
 
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var table: UITableView!
     private var viewModel = AddOrderViewModel()
     private var segment:UISegmentedControl!
+    var delegate:AddOrderDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -27,7 +35,9 @@ class AddViewController: UIViewController {
         self.segment.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive  = true
     }
     @IBAction func tapCloseButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        if let delegate = self.delegate {
+            delegate.addOrderViewControllerDidClose(contrlloer: self)
+        }
     }
     @IBAction func tapSaveButton(_ sender: Any) {
         let name = self.nameTF.text
@@ -46,7 +56,11 @@ class AddViewController: UIViewController {
             result in
             switch result {
             case .success(let order):
-                print(order)
+                if let order = order,let delegate = self.delegate {
+                    DispatchQueue.main.async {
+                        delegate.addOrderViewControllerDidSave(order: order, controller: self)
+                    }
+                }
             case .failure(let error):
                 print(error)
             }
@@ -77,3 +91,4 @@ extension AddViewController:UITableViewDataSource {
     
     
 }
+
