@@ -18,16 +18,11 @@ class OrderTableViewController: UITableViewController {
     }
     
     private func populateOrders() {
-        guard let coffeeOrdersURL = URL(string: "http://guarded-retreat-82533.herokuapp.com/orders") else { fatalError() }
         
-        let resource = Resource<[Order]>(url:coffeeOrdersURL)
-        
-        
-        
-        Webservice().load(resource: resource) { [weak self](result) in
+        Webservice().load(resource: Order.all) { [weak self](result) in
             switch result {
             case .success(let orders) :
-                self?.orderListViewModel.ordersViewModel = orders.map(OrderViewModel.init)
+                self?.orderListViewModel.ordersViewModel = orders.filter{$0.type != nil}.map(OrderViewModel.init)
                 self?.tableView.reloadData()
             case .failure(let error):
                 print(error)

@@ -43,3 +43,37 @@ extension OrderViewModel {
         return self.order.size?.rawValue.capitalized ?? ""
     }
 }
+
+extension Order {
+    
+    static var all:Resource<[Order]> = {
+        let url = URL(string: "http://guarded-retreat-82533.herokuapp.com/orders")!
+        return Resource<[Order]>(url: url)
+    }()
+    
+    static func create(viewModel:AddOrderViewModel) -> Resource<Order?> {
+        let order = Order(viewModel)
+        let url = URL(string: "http://guarded-retreat-82533.herokuapp.com/orders")!
+        
+        guard let data = try? JSONEncoder().encode(order) else {fatalError()}
+        
+        var resource = Resource<Order?>(url: url)
+        resource.httpMethod = HTTPMethod.post
+        resource.body = data
+        
+        return resource
+    }
+}
+
+extension Order {
+    init?(_ viewModel:AddOrderViewModel) {
+        guard let name = viewModel.name,
+              let email = viewModel.email,
+              let selectedType = CoffeeType(rawValue: viewModel.selectedType!.lowercased()),
+              let selectedSize = CoffeeSize(rawValue: viewModel.selectedSize!.lowercased()) else {return nil}
+        self.name = name
+        self.email = email
+        self.type = selectedType
+        self.size = selectedSize
+    }
+}

@@ -11,14 +11,25 @@ enum NetworkError:Error {
     case decodingError
     case domainError
     case urlError
-    
-    
+}
+
+enum HTTPMethod:String {
+    case get = "GET"
+    case post = "POST"
 }
 
 struct Resource<T:Codable> {
     let url:URL
+    var httpMethod:HTTPMethod = .get
+    var body:Data? = nil
 }
 
+
+extension Resource {
+    init(url:URL) {
+        self.url = url
+    }
+}
 
 class Webservice {
     func load<T>(resource:Resource<T>,completion:@escaping(Result<T,NetworkError>) -> Void) {

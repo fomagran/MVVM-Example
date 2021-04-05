@@ -112,17 +112,6 @@
                                     <outlet property="delegate" destination="WpY-8U-ftm" id="9Hs-Vj-mXT"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WsU-o4-V8s">
-                                <rect key="frame" x="104" y="588" width="206" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="F8A-Fa-B3J"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Small"/>
-                                    <segment title="Medium"/>
-                                    <segment title="Large"/>
-                                </segments>
-                            </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="56L-U1-BYe">
                                 <rect key="frame" x="20" y="693" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -139,24 +128,31 @@
                         <constraints>
                             <constraint firstItem="Tf5-dd-tH1" firstAttribute="trailing" secondItem="56L-U1-BYe" secondAttribute="trailing" constant="20" id="F4H-Ar-KjF"/>
                             <constraint firstItem="wG6-d8-BWT" firstAttribute="top" secondItem="56L-U1-BYe" secondAttribute="bottom" constant="16" id="FiY-GA-pN3"/>
-                            <constraint firstItem="WsU-o4-V8s" firstAttribute="top" secondItem="SRg-GU-002" secondAttribute="bottom" constant="52" id="NCh-lu-GPQ"/>
                             <constraint firstItem="SRg-GU-002" firstAttribute="leading" secondItem="Tf5-dd-tH1" secondAttribute="leading" id="Tib-jp-GiU"/>
-                            <constraint firstItem="56L-U1-BYe" firstAttribute="centerX" secondItem="WsU-o4-V8s" secondAttribute="centerX" id="XwR-iW-0NG"/>
                             <constraint firstItem="SRg-GU-002" firstAttribute="height" secondItem="bae-h8-c7C" secondAttribute="height" multiplier="0.5" id="Z3m-cQ-g5h"/>
-                            <constraint firstItem="56L-U1-BYe" firstAttribute="top" secondItem="WsU-o4-V8s" secondAttribute="bottom" constant="75" id="bi0-oh-Qvt"/>
                             <constraint firstItem="Tf5-dd-tH1" firstAttribute="trailing" secondItem="SRg-GU-002" secondAttribute="trailing" id="cIJ-tp-Lt3"/>
                             <constraint firstItem="wG6-d8-BWT" firstAttribute="leading" secondItem="56L-U1-BYe" secondAttribute="leading" id="d2V-NH-5Iw"/>
                             <constraint firstItem="SRg-GU-002" firstAttribute="top" secondItem="Tf5-dd-tH1" secondAttribute="top" id="eG8-6U-2zQ"/>
                             <constraint firstItem="wG6-d8-BWT" firstAttribute="trailing" secondItem="56L-U1-BYe" secondAttribute="trailing" id="k1v-RG-rX7"/>
-                            <constraint firstItem="WsU-o4-V8s" firstAttribute="centerX" secondItem="SRg-GU-002" secondAttribute="centerX" id="mRT-yw-SjG"/>
                             <constraint firstItem="56L-U1-BYe" firstAttribute="leading" secondItem="Tf5-dd-tH1" secondAttribute="leading" constant="20" id="sUW-BG-c3D"/>
+                            <constraint firstItem="56L-U1-BYe" firstAttribute="top" secondItem="SRg-GU-002" secondAttribute="bottom" constant="157" id="zml-qL-4hc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1Ht-Gf-tkc">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="jB4-oY-nHw"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="o3Q-17-BZR"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="jB4-oY-nHw">
+                            <connections>
+                                <action selector="tapCloseButton:" destination="WpY-8U-ftm" id="qtq-7D-swK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="o3Q-17-BZR">
+                            <connections>
+                                <action selector="tapSaveButton:" destination="WpY-8U-ftm" id="2ae-XY-9wA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailTF" destination="56L-U1-BYe" id="zxE-3H-gai"/>
+                        <outlet property="nameTF" destination="wG6-d8-BWT" id="8PC-KR-WhI"/>
                         <outlet property="table" destination="SRg-GU-002" id="3vo-6F-Vl5"/>
                     </connections>
                 </viewController>
