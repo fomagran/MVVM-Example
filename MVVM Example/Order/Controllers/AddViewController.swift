@@ -34,13 +34,23 @@ class AddViewController: UIViewController {
         let email = self.emailTF.text
         
         let selectedSize = self.segment.titleForSegment(at: self.segment.selectedSegmentIndex)
-        
+
         guard let indexPath = self.table.indexPathForSelectedRow else {fatalError()}
-        
+
         self.viewModel.name = name
         self.viewModel.email = email
         self.viewModel.selectedSize = selectedSize
         self.viewModel.selectedType = self.viewModel.types[indexPath.row]
+        
+        Webservice().load(resource:Order.create(viewModel: self.viewModel)) {
+            result in
+            switch result {
+            case .success(let order):
+                print(order)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
