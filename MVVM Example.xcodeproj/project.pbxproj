@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		041C19FD261AAFA50025AB63 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C19FC261AAFA50025AB63 /* OrderViewModel.swift */; };
 		041C1A00261AB4C20025AB63 /* AddOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C19FF261AB4C20025AB63 /* AddOrderViewModel.swift */; };
+		04B4326C2640EF2900517591 /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4326B2640EF2900517591 /* WeatherTableViewController.swift */; };
 		04FB85B9261174D2000E594A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB85B8261174D2000E594A /* AppDelegate.swift */; };
 		04FB85BB261174D2000E594A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB85BA261174D2000E594A /* SceneDelegate.swift */; };
 		04FB85C0261174D2000E594A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FB85BE261174D2000E594A /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		041C19FC261AAFA50025AB63 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		041C19FF261AB4C20025AB63 /* AddOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewModel.swift; sourceTree = "<group>"; };
+		04B4326B2640EF2900517591 /* WeatherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewController.swift; sourceTree = "<group>"; };
 		04FB85B5261174D2000E594A /* MVVM Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FB85B8261174D2000E594A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04FB85BA261174D2000E594A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04B4326A2640EC8A00517591 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				04B4326E2640F02500517591 /* Views */,
+				04B4326D2640F02000517591 /* Controllers */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		04B4326D2640F02000517591 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04B4326B2640EF2900517591 /* WeatherTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04B4326E2640F02500517591 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		04FB85AC261174D2000E594A = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +92,7 @@
 		04FB85B7261174D2000E594A /* MVVM Example */ = {
 			isa = PBXGroup;
 			children = (
+				04B4326A2640EC8A00517591 /* Weather */,
 				04FB85CD261175BF000E594A /* Order */,
 				04FB85B8261174D2000E594A /* AppDelegate.swift */,
 				04FB85BA261174D2000E594A /* SceneDelegate.swift */,
@@ -201,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04FB85DF26117B1E000E594A /* Order.swift in Sources */,
+				04B4326C2640EF2900517591 /* WeatherTableViewController.swift in Sources */,
 				04FB85D42611765B000E594A /* OrderTableViewController.swift in Sources */,
 				04FB85B9261174D2000E594A /* AppDelegate.swift in Sources */,
 				041C1A00261AB4C20025AB63 /* AddOrderViewModel.swift in Sources */,
