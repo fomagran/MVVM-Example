@@ -35,12 +35,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MxT-24-sdg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="gD6-3b-5Pf" detailTextLabel="5gE-Xk-VFY" style="IBUITableViewCellStyleValue1" id="MxT-24-sdg">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MxT-24-sdg" id="NIz-FP-XS2">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gD6-3b-5Pf">
+                                            <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5gE-Xk-VFY">
+                                            <rect key="frame" x="361" y="15" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -65,14 +81,46 @@
         <!--Add-->
         <scene sceneID="Yku-zA-2QZ">
             <objects>
-                <viewController id="O37-sZ-IS7" sceneMemberID="viewController">
+                <viewController id="O37-sZ-IS7" customClass="AddWeatherViewController" customModule="MVVM_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5xu-fr-KEo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nep-Fx-OsZ">
+                                <rect key="frame" x="20" y="86" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6U-Kf-zzH">
+                                <rect key="frame" x="190" y="140" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="tapSaveButton:" destination="O37-sZ-IS7" eventType="touchUpInside" id="S8K-1a-x3a"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aq7-I2-l5n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P6U-Kf-zzH" firstAttribute="top" secondItem="Nep-Fx-OsZ" secondAttribute="bottom" constant="20" id="PIp-0T-FTD"/>
+                            <constraint firstItem="Nep-Fx-OsZ" firstAttribute="leading" secondItem="aq7-I2-l5n" secondAttribute="leading" constant="20" id="Pd7-Wc-3Bs"/>
+                            <constraint firstItem="aq7-I2-l5n" firstAttribute="trailing" secondItem="Nep-Fx-OsZ" secondAttribute="trailing" constant="20" id="V2d-Fh-53l"/>
+                            <constraint firstItem="Nep-Fx-OsZ" firstAttribute="centerX" secondItem="aq7-I2-l5n" secondAttribute="centerX" id="WtN-dS-66Q"/>
+                            <constraint firstItem="Nep-Fx-OsZ" firstAttribute="top" secondItem="aq7-I2-l5n" secondAttribute="top" constant="30" id="bk8-Hi-OEP"/>
+                            <constraint firstItem="P6U-Kf-zzH" firstAttribute="centerX" secondItem="Nep-Fx-OsZ" secondAttribute="centerX" id="wga-Dk-tOv"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add" id="m6u-cs-S7d"/>
+                    <navigationItem key="navigationItem" title="Add" id="m6u-cs-S7d">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="Tc0-mv-RuH">
+                            <connections>
+                                <action selector="tapCloseButton:" destination="O37-sZ-IS7" id="lsX-3w-pNd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cityTF" destination="Nep-Fx-OsZ" id="kWs-i0-6re"/>
+                        <outlet property="saveButton" destination="P6U-Kf-zzH" id="KTI-7N-hbs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Syq-l9-7md" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,8 @@
 		041C19FD261AAFA50025AB63 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C19FC261AAFA50025AB63 /* OrderViewModel.swift */; };
 		041C1A00261AB4C20025AB63 /* AddOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C19FF261AB4C20025AB63 /* AddOrderViewModel.swift */; };
 		04B4326C2640EF2900517591 /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4326B2640EF2900517591 /* WeatherTableViewController.swift */; };
+		04B432702640F09500517591 /* AddWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4326F2640F09500517591 /* AddWeatherViewController.swift */; };
+		04B432742640F57C00517591 /* WeatherKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B432732640F57C00517591 /* WeatherKey.swift */; };
 		04FB85B9261174D2000E594A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB85B8261174D2000E594A /* AppDelegate.swift */; };
 		04FB85BB261174D2000E594A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB85BA261174D2000E594A /* SceneDelegate.swift */; };
 		04FB85C0261174D2000E594A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FB85BE261174D2000E594A /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		041C19FC261AAFA50025AB63 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		041C19FF261AB4C20025AB63 /* AddOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewModel.swift; sourceTree = "<group>"; };
 		04B4326B2640EF2900517591 /* WeatherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewController.swift; sourceTree = "<group>"; };
+		04B4326F2640F09500517591 /* AddWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherViewController.swift; sourceTree = "<group>"; };
+		04B432732640F57C00517591 /* WeatherKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherKey.swift; sourceTree = "<group>"; };
 		04FB85B5261174D2000E594A /* MVVM Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FB85B8261174D2000E594A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04FB85BA261174D2000E594A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			children = (
 				04B4326E2640F02500517591 /* Views */,
 				04B4326D2640F02000517591 /* Controllers */,
+				04B432732640F57C00517591 /* WeatherKey.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -62,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				04B4326B2640EF2900517591 /* WeatherTableViewController.swift */,
+				04B4326F2640F09500517591 /* AddWeatherViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -228,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04FB85DF26117B1E000E594A /* Order.swift in Sources */,
+				04B432702640F09500517591 /* AddWeatherViewController.swift in Sources */,
 				04B4326C2640EF2900517591 /* WeatherTableViewController.swift in Sources */,
 				04FB85D42611765B000E594A /* OrderTableViewController.swift in Sources */,
 				04FB85B9261174D2000E594A /* AppDelegate.swift in Sources */,
@@ -235,6 +242,7 @@
 				04FB85D82611767B000E594A /* AddViewController.swift in Sources */,
 				04FB85DC261179D4000E594A /* Webservice.swift in Sources */,
 				041C19FD261AAFA50025AB63 /* OrderViewModel.swift in Sources */,
+				04B432742640F57C00517591 /* WeatherKey.swift in Sources */,
 				04FB85BB261174D2000E594A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
