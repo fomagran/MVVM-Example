@@ -69,7 +69,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Setting" id="kHA-Tz-tq7"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0X9-yc-ZJE">
                             <connections>
-                                <segue destination="vaw-kx-cGI" kind="presentation" id="4U9-H2-49K"/>
+                                <segue destination="vaw-kx-cGI" kind="presentation" identifier="showAddWeatherViewController" id="4U9-H2-49K"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
