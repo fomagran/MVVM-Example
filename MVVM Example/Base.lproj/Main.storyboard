@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="gD6-3b-5Pf" detailTextLabel="5gE-Xk-VFY" style="IBUITableViewCellStyleValue1" id="MxT-24-sdg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" textLabel="gD6-3b-5Pf" detailTextLabel="5gE-Xk-VFY" style="IBUITableViewCellStyleValue1" id="MxT-24-sdg" customClass="WeatherCell" customModule="MVVM_Example" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MxT-24-sdg" id="NIz-FP-XS2">
@@ -58,6 +58,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cityName" destination="gD6-3b-5Pf" id="9gt-0g-NAu"/>
+                                    <outlet property="temperature" destination="5gE-Xk-VFY" id="FLK-l6-DLo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
