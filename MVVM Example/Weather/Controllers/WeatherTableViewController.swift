@@ -11,7 +11,18 @@ class WeatherTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=\(WeatherKey().key)&units=imperial")!
+        let resource = WeatherResource(url: url) { data in
+            
+           return try? JSONDecoder().decode(WeatherResponse.self, from: data)
+        }
+        
+        WeatherWebService().load(resource: resource) { response in
+            if let response = response {
+                print(response)
+            }
+        }
     }
 
     // MARK: - Table view data source
