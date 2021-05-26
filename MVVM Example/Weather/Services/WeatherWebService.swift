@@ -15,6 +15,7 @@ struct WeatherResource<T> {
 final class WeatherWebService {
     func load<T>(resource:WeatherResource<T>,completion:@escaping (T?)-> ()) {
         URLSession.shared.dataTask(with: resource.url) { data, URLResponse, error in
+            
             if let data = data {
                 //URLSession이 백그라운드에서 실행되므로 메인쓰레드로 데이터를 보내줘야함.
                 DispatchQueue.main.async {
