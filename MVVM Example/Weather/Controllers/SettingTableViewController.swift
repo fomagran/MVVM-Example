@@ -7,11 +7,23 @@
 
 import UIKit
 
+protocol SettingDelegate {
+    func settingDone(vm:SettingViewModel)
+}
+
 class SettingTableViewController: UITableViewController {
+    
+    var delegate:SettingDelegate?
+    
     private var settingsViewModel = SettingViewModel()
     
     override func viewDidLoad() {
         
+    }
+    
+    @IBAction func tapDoneButton(_ sender: Any) {
+            delegate?.settingDone(vm: settingsViewModel)
+            dismiss(animated: true, completion: nil)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

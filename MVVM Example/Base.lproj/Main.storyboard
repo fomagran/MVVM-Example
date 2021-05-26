@@ -72,7 +72,7 @@
                     <navigationItem key="navigationItem" title="Weather" id="eRa-hW-zKc">
                         <barButtonItem key="leftBarButtonItem" title="Setting" id="kHA-Tz-tq7">
                             <connections>
-                                <segue destination="ChJ-SO-8bb" kind="show" identifier="showSettingViewController" id="oN2-zy-6Nz"/>
+                                <segue destination="9sr-9w-IGH" kind="presentation" identifier="showSettingViewController" id="oN2-zy-6Nz"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0X9-yc-ZJE">
@@ -139,7 +139,7 @@
             <objects>
                 <tableViewController id="ChJ-SO-8bb" customClass="SettingTableViewController" customModule="MVVM_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0qd-yU-Nyd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -166,11 +166,17 @@
                             <outlet property="delegate" destination="ChJ-SO-8bb" id="8C4-1f-12N"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="6fD-GV-K0o"/>
+                    <navigationItem key="navigationItem" id="6fD-GV-K0o">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ijw-D9-hSD">
+                            <connections>
+                                <action selector="tapDoneButton:" destination="ChJ-SO-8bb" id="ya7-0w-eTy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zbb-Af-N6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3629" y="-563"/>
+            <point key="canvasLocation" x="4539.130434782609" y="-563.16964285714278"/>
         </scene>
         <!--Order-->
         <scene sceneID="bz0-x8-BNX">
@@ -360,6 +366,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5e-y5-SSP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1866.6666666666667" y="-562.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cZt-z8-JG3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9sr-9w-IGH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HGm-iu-QGC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ChJ-SO-8bb" kind="relationship" relationship="rootViewController" id="vej-LK-DV4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acI-UY-V8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3628.985507246377" y="-563.16964285714278"/>
         </scene>
     </scenes>
     <resources>
