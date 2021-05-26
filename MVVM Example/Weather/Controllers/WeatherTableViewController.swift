@@ -16,7 +16,7 @@ class WeatherTableViewController: UITableViewController,AddWeatherDelegate,Setti
         super.viewDidLoad()
 
         if let value = userDefaults.value(forKey: "unit") as? String {
-            self.lastUnitSelection = Unit(rawValue: value) ?? .celsius
+            self.lastUnitSelection = Unit(rawValue: value)!
         }
     }
     

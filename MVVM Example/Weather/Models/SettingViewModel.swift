@@ -37,7 +37,7 @@ class SettingViewModel {
                 unitValue = value
             }
             
-            return Unit(rawValue: unitValue) ?? .celsius
+            return Unit(rawValue: unitValue) ?? .fahrenheit
         }
         set {
             let userDefault = UserDefaults.standard

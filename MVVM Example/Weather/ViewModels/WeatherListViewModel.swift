@@ -26,7 +26,7 @@ class WeatherListViewModel {
     private func toCelcius() {
         weatherViewModels =  weatherViewModels.map { vm in
             let weatherModel = vm
-            weatherModel.temperature = floor(Double((weatherModel.temperature - 32) * 5/9))
+            weatherModel.temperature = floor((weatherModel.temperature - 32) * 5/9)
             return weatherModel
         }
     }
@@ -34,7 +34,7 @@ class WeatherListViewModel {
     private func toFahrenheit() {
         weatherViewModels =  weatherViewModels.map { vm in
             let weatherModel = vm
-            weatherModel.temperature = (weatherModel.temperature * 9/5) + 32
+            weatherModel.temperature = floor((weatherModel.temperature * 9/5) + 32)
             return weatherModel
         }
     }
