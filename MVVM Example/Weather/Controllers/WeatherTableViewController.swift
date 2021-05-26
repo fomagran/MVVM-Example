@@ -32,7 +32,7 @@ class WeatherTableViewController: UITableViewController,AddWeatherDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAddWeatherViewController" {
-            
+            prepareSegueForAddWeatherViewController(segue: segue)
         }
     }
     
