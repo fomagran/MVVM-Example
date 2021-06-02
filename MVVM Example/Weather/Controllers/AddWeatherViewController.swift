@@ -34,8 +34,6 @@ class AddWeatherViewController: UIViewController {
     
     var delegate:AddWeatherDelegate?
     
-    private var addWeatherVM = AddWeatherViewModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,22 +41,24 @@ class AddWeatherViewController: UIViewController {
     
     @IBAction func tapSaveButton(_ sender: Any) {
         
-        print(self.addCityViewModel)
-        
         if let city = cityTF.text {
+            let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&APPID=1a5b183fc3a82b25cc1095a55e549a0b&units=imperial")!
             
-            let weatherURL = Constants.URLs.urlForWeatherByCity(city: city)
             let weatherResource = WeatherResource<WeatherViewModel>(url: weatherURL) { data in
-                return try? JSONDecoder().decode(WeatherViewModel.self, from:data)
+                
+                let weatherVM = try? JSONDecoder().decode(WeatherViewModel.self, from: data)
+                return weatherVM
             }
             
-            WeatherWebService().load(resource: weatherResource) { result in
+            WeatherWebService().load(resource: weatherResource) { [weak self] result in
                 if let weatherVM = result {
-                    if let delegate = self.delegate {
+                    if let delegate = self?.delegate {
                         delegate.addWeatherDidSave(vm: weatherVM)
-                        self.dismiss(animated: true, completion: nil)
+                        self?.dismiss(animated: true, completion: nil)
                     }
+                    
                 }
+                
             }
         }
     }
