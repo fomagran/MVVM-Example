@@ -48,11 +48,17 @@ class WeatherTableViewController: UITableViewController,AddWeatherDelegate,Setti
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showWeatherDetailViewController", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAddWeatherViewController" {
             prepareSegueForAddWeatherViewController(segue: segue)
         }else if segue.identifier == "showSettingViewController" {
             prepareSegueForSettingViewController(segue: segue)
+        }else if segue.identifier == "showWeatherDetailViewController" {
+            prepareSegueForWeatherDetailViewController(segue: segue)
         }
     }
     
@@ -72,7 +78,15 @@ class WeatherTableViewController: UITableViewController,AddWeatherDelegate,Setti
         guard let addWeatherVC = nav.viewControllers.first as? AddWeatherViewController else { fatalError() }
     
         addWeatherVC.delegate = self
-        
-        
     }
+    
+    func prepareSegueForWeatherDetailViewController(segue:UIStoryboardSegue) {
+        
+        guard let weatherDetailVC = segue.destination as? WeatherDetailViewController,let indexPath = self.tableView.indexPathForSelectedRow else { return }
+    
+        let weatherVM = self.weatherListViewModel.modelAt(index: indexPath.row)
+        weatherDetailVC.weatherViewModel = weatherVM
+    }
+    
+    
 }

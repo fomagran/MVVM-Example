@@ -43,6 +43,8 @@ class AddWeatherViewController: UIViewController {
     
     @IBAction func tapSaveButton(_ sender: Any) {
         
+        print(self.addCityViewModel)
+        
         if let city = cityTF.text {
             addWeatherVM.addWeather(city: city) { viewModel in
                 self.delegate?.addWeatherDidSave(vm: viewModel)
