@@ -17,11 +17,13 @@ class WeatherDetailViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        bind()
+    }
+    
+    private func bind() {
         if let weatherVM = self.weatherViewModel {
-            self.cityName.text = weatherVM.city
-            self.currentTemp.text = "\(weatherVM.temperature)"
+            weatherVM.city.bind { self.cityName.text = $0 }
+            weatherVM.currentTemp.temp.bind {self.currentTemp.text = String($0)}
         }
-        
     }
 }

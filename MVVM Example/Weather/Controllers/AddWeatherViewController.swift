@@ -46,9 +46,19 @@ class AddWeatherViewController: UIViewController {
         print(self.addCityViewModel)
         
         if let city = cityTF.text {
-            addWeatherVM.addWeather(city: city) { viewModel in
-                self.delegate?.addWeatherDidSave(vm: viewModel)
-                self.dismiss(animated: true, completion: nil)
+            
+            let weatherURL = Constants.URLs.urlForWeatherByCity(city: city)
+            let weatherResource = WeatherResource<WeatherViewModel>(url: weatherURL) { data in
+                return try? JSONDecoder().decode(WeatherViewModel.self, from:data)
+            }
+            
+            WeatherWebService().load(resource: weatherResource) { result in
+                if let weatherVM = result {
+                    if let delegate = self.delegate {
+                        delegate.addWeatherDidSave(vm: weatherVM)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
             }
         }
     }
