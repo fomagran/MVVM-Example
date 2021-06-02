@@ -11,13 +11,16 @@ class WeatherTableViewController: UITableViewController,AddWeatherDelegate,Setti
 
     let userDefaults = UserDefaults.standard
     
-    private var datasource:WeatherDataSource?
+    private var datasource:TableViewDataSource<WeatherCell,WeatherViewModel>!
     private var weatherListViewModel = WeatherListViewModel()
     private var lastUnitSelection:Unit?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.datasource = WeatherDataSource(weatherListViewModel: weatherListViewModel)
+        self.datasource = TableViewDataSource(cellIdentifier: "WeatherCell", viewModels: weatherListViewModel.weatherViewModels) { cell, vm in
+            cell.cityName.text = vm.name.value
+            cell.temperature.text = String(vm.currentTemperature.temperature.value)
+        }
         self.tableView.dataSource = self.datasource
         
         if let value = userDefaults.value(forKey: "unit") as? String {
@@ -26,7 +29,9 @@ class WeatherTableViewController: UITableViewController,AddWeatherDelegate,Setti
     }
     
     func addWeatherDidSave(vm: WeatherViewModel) {
+
         weatherListViewModel.addWeatherViewModel(vm: vm)
+        self.datasource.updateViewModels(weatherListViewModel.weatherViewModels)
         self.tableView.reloadData()
     }
     
