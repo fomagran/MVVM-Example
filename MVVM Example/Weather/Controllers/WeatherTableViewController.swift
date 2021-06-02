@@ -10,11 +10,16 @@ import UIKit
 class WeatherTableViewController: UITableViewController,AddWeatherDelegate,SettingDelegate {
 
     let userDefaults = UserDefaults.standard
+    
+    private var datasource:WeatherDataSource?
     private var weatherListViewModel = WeatherListViewModel()
     private var lastUnitSelection:Unit?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.datasource = WeatherDataSource(weatherListViewModel: weatherListViewModel)
+        self.tableView.dataSource = self.datasource
+        
         if let value = userDefaults.value(forKey: "unit") as? String {
             self.lastUnitSelection = Unit(rawValue: value)!
         }
@@ -34,19 +39,6 @@ class WeatherTableViewController: UITableViewController,AddWeatherDelegate,Setti
         
     }
 
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        return weatherListViewModel.numberOfRows(section: section)
-    }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
-        
-        let vm = weatherListViewModel.modelAt(index: indexPath.row)
-        cell.configure(vm: vm)
-        return cell
-    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showWeatherDetailViewController", sender: nil)

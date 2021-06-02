@@ -9,7 +9,8 @@ import Foundation
 
 class WeatherListViewModel {
     
-    private var weatherViewModels = [WeatherViewModel]()
+    //set만 private로 하는법
+    private(set) var weatherViewModels = [WeatherViewModel]()
     
     func addWeatherViewModel(vm:WeatherViewModel) {
         weatherViewModels.append(vm)
