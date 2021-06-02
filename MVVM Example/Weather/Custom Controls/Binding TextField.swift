@@ -21,6 +21,10 @@ class BindingTextField:UITextField {
         commonInit()
     }
     
+    func bind(callBack:@escaping(String) -> ()) {
+        self.textChangeClosure = callBack
+    }
+    
     private func commonInit() {
         self.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
