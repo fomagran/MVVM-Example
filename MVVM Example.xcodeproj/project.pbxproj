@@ -14,6 +14,8 @@
 		04B1716926676CE800826ACC /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1716826676CE800826ACC /* WeatherDetailViewController.swift */; };
 		04B1716C2667820900826ACC /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1716B2667820900826ACC /* WeatherDataSource.swift */; };
 		04B1716E2667852D00826ACC /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1716D2667852D00826ACC /* TableViewDataSource.swift */; };
+		04B171A726678B2800826ACC /* MVVM_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B171A626678B2800826ACC /* MVVM_ExampleTests.swift */; };
+		04B171AF26678B6E00826ACC /* SettingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B171AE26678B6E00826ACC /* SettingViewModelTests.swift */; };
 		04B4326C2640EF2900517591 /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4326B2640EF2900517591 /* WeatherTableViewController.swift */; };
 		04B432702640F09500517591 /* AddWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4326F2640F09500517591 /* AddWeatherViewController.swift */; };
 		04B432742640F57C00517591 /* WeatherKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B432732640F57C00517591 /* WeatherKey.swift */; };
@@ -36,6 +38,16 @@
 		04FB85DF26117B1E000E594A /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB85DE26117B1E000E594A /* Order.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		04B171A926678B2800826ACC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04FB85AD261174D2000E594A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04FB85B4261174D2000E594A;
+			remoteInfo = "MVVM Example";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		041C19FC261AAFA50025AB63 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		041C19FF261AB4C20025AB63 /* AddOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewModel.swift; sourceTree = "<group>"; };
@@ -44,6 +56,10 @@
 		04B1716826676CE800826ACC /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 		04B1716B2667820900826ACC /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
 		04B1716D2667852D00826ACC /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		04B171A426678B2800826ACC /* MVVM ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVM ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B171A626678B2800826ACC /* MVVM_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_ExampleTests.swift; sourceTree = "<group>"; };
+		04B171A826678B2800826ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B171AE26678B6E00826ACC /* SettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelTests.swift; sourceTree = "<group>"; };
 		04B4326B2640EF2900517591 /* WeatherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewController.swift; sourceTree = "<group>"; };
 		04B4326F2640F09500517591 /* AddWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherViewController.swift; sourceTree = "<group>"; };
 		04B432732640F57C00517591 /* WeatherKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherKey.swift; sourceTree = "<group>"; };
@@ -69,6 +85,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		04B171A126678B2800826ACC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04FB85B2261174D2000E594A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,6 +117,16 @@
 				04B1716D2667852D00826ACC /* TableViewDataSource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		04B171A526678B2800826ACC /* MVVM ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				04B171A626678B2800826ACC /* MVVM_ExampleTests.swift */,
+				04B171A826678B2800826ACC /* Info.plist */,
+				04B171AE26678B6E00826ACC /* SettingViewModelTests.swift */,
+			);
+			path = "MVVM ExampleTests";
 			sourceTree = "<group>";
 		};
 		04B4326A2640EC8A00517591 /* Weather */ = {
@@ -178,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				04FB85B7261174D2000E594A /* MVVM Example */,
+				04B171A526678B2800826ACC /* MVVM ExampleTests */,
 				04FB85B6261174D2000E594A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -186,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				04FB85B5261174D2000E594A /* MVVM Example.app */,
+				04B171A426678B2800826ACC /* MVVM ExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,6 +296,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		04B171A326678B2800826ACC /* MVVM ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04B171AD26678B2800826ACC /* Build configuration list for PBXNativeTarget "MVVM ExampleTests" */;
+			buildPhases = (
+				04B171A026678B2800826ACC /* Sources */,
+				04B171A126678B2800826ACC /* Frameworks */,
+				04B171A226678B2800826ACC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04B171AA26678B2800826ACC /* PBXTargetDependency */,
+			);
+			name = "MVVM ExampleTests";
+			productName = "MVVM ExampleTests";
+			productReference = 04B171A426678B2800826ACC /* MVVM ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		04FB85B4261174D2000E594A /* MVVM Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04FB85C9261174D4000E594A /* Build configuration list for PBXNativeTarget "MVVM Example" */;
@@ -284,9 +337,13 @@
 		04FB85AD261174D2000E594A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					04B171A326678B2800826ACC = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 04FB85B4261174D2000E594A;
+					};
 					04FB85B4261174D2000E594A = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -306,11 +363,19 @@
 			projectRoot = "";
 			targets = (
 				04FB85B4261174D2000E594A /* MVVM Example */,
+				04B171A326678B2800826ACC /* MVVM ExampleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		04B171A226678B2800826ACC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04FB85B3261174D2000E594A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -324,6 +389,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		04B171A026678B2800826ACC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B171A726678B2800826ACC /* MVVM_ExampleTests.swift in Sources */,
+				04B171AF26678B6E00826ACC /* SettingViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04FB85B1261174D2000E594A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,6 +431,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		04B171AA26678B2800826ACC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04FB85B4261174D2000E594A /* MVVM Example */;
+			targetProxy = 04B171A926678B2800826ACC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		04FB85BE261174D2000E594A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -377,6 +459,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		04B171AB26678B2800826ACC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2F54VR68GM;
+				INFOPLIST_FILE = "MVVM ExampleTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fomagran.MVVM-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVM Example.app/MVVM Example";
+			};
+			name = Debug;
+		};
+		04B171AC26678B2800826ACC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2F54VR68GM;
+				INFOPLIST_FILE = "MVVM ExampleTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fomagran.MVVM-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVM Example.app/MVVM Example";
+			};
+			name = Release;
+		};
 		04FB85C7261174D4000E594A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -534,6 +658,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		04B171AD26678B2800826ACC /* Build configuration list for PBXNativeTarget "MVVM ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B171AB26678B2800826ACC /* Debug */,
+				04B171AC26678B2800826ACC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		04FB85B0261174D2000E594A /* Build configuration list for PBXProject "MVVM Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
