@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		041C19FD261AAFA50025AB63 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C19FC261AAFA50025AB63 /* OrderViewModel.swift */; };
 		041C1A00261AB4C20025AB63 /* AddOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C19FF261AB4C20025AB63 /* AddOrderViewModel.swift */; };
+		04B171642667695600826ACC /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B171632667695600826ACC /* AddCityViewModel.swift */; };
+		04B171672667697E00826ACC /* Binding TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B171662667697E00826ACC /* Binding TextField.swift */; };
 		04B4326C2640EF2900517591 /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4326B2640EF2900517591 /* WeatherTableViewController.swift */; };
 		04B432702640F09500517591 /* AddWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4326F2640F09500517591 /* AddWeatherViewController.swift */; };
 		04B432742640F57C00517591 /* WeatherKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B432732640F57C00517591 /* WeatherKey.swift */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		041C19FC261AAFA50025AB63 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		041C19FF261AB4C20025AB63 /* AddOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewModel.swift; sourceTree = "<group>"; };
+		04B171632667695600826ACC /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
+		04B171662667697E00826ACC /* Binding TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding TextField.swift"; sourceTree = "<group>"; };
 		04B4326B2640EF2900517591 /* WeatherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewController.swift; sourceTree = "<group>"; };
 		04B4326F2640F09500517591 /* AddWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherViewController.swift; sourceTree = "<group>"; };
 		04B432732640F57C00517591 /* WeatherKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherKey.swift; sourceTree = "<group>"; };
@@ -71,9 +75,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04B171652667696F00826ACC /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				04B171662667697E00826ACC /* Binding TextField.swift */,
+			);
+			path = "Custom Controls";
+			sourceTree = "<group>";
+		};
 		04B4326A2640EC8A00517591 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				04B171652667696F00826ACC /* Custom Controls */,
 				04E6768F265DE9A500FBE4E1 /* Extensions */,
 				04E6768C265DE98300FBE4E1 /* Utils */,
 				04E67689265DE93400FBE4E1 /* ViewModels */,
@@ -126,6 +139,7 @@
 			children = (
 				04E6768A265DE94200FBE4E1 /* AddWeatherViewModel.swift */,
 				04E67692265DEB6C00FBE4E1 /* WeatherListViewModel.swift */,
+				04B171632667695600826ACC /* AddCityViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -300,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B171672667697E00826ACC /* Binding TextField.swift in Sources */,
 				04FB85DF26117B1E000E594A /* Order.swift in Sources */,
 				04E67697265DF0D000FBE4E1 /* SettingViewModel.swift in Sources */,
 				04B432702640F09500517591 /* AddWeatherViewController.swift in Sources */,
@@ -320,6 +335,7 @@
 				04E67685265DE40600FBE4E1 /* WeatherWebService.swift in Sources */,
 				04B432742640F57C00517591 /* WeatherKey.swift in Sources */,
 				04FB85BB261174D2000E594A /* SceneDelegate.swift in Sources */,
+				04B171642667695600826ACC /* AddCityViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

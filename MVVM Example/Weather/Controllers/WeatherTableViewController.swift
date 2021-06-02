@@ -26,7 +26,6 @@ class WeatherTableViewController: UITableViewController,AddWeatherDelegate,Setti
     }
     
     func settingDone(vm: SettingViewModel) {
-        print(vm.selectedUnit)
         if lastUnitSelection?.rawValue != vm.selectedUnit.rawValue {
             weatherListViewModel.updateUnit(to:vm.selectedUnit)
             tableView.reloadData()

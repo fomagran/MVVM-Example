@@ -15,6 +15,8 @@ class AddWeatherViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cityTF: UITextField!
+    @IBOutlet weak var stateTF: UITextField!
+    @IBOutlet weak var zipCodeTF: UITextField!
     
     var delegate:AddWeatherDelegate?
     

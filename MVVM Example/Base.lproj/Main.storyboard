@@ -94,28 +94,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nep-Fx-OsZ">
-                                <rect key="frame" x="20" y="86" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6U-Kf-zzH">
-                                <rect key="frame" x="190" y="140" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="tapSaveButton:" destination="O37-sZ-IS7" eventType="touchUpInside" id="S8K-1a-x3a"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="VZG-PL-TNq">
+                                <rect key="frame" x="20" y="86" width="374" height="226"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nep-Fx-OsZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFc-XO-DEf">
+                                        <rect key="frame" x="0.0" y="64" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hW4-tr-grB">
+                                        <rect key="frame" x="0.0" y="128" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6U-Kf-zzH">
+                                        <rect key="frame" x="0.0" y="192" width="374" height="34"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="tapSaveButton:" destination="O37-sZ-IS7" eventType="touchUpInside" id="S8K-1a-x3a"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aq7-I2-l5n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="P6U-Kf-zzH" firstAttribute="top" secondItem="Nep-Fx-OsZ" secondAttribute="bottom" constant="20" id="PIp-0T-FTD"/>
-                            <constraint firstItem="Nep-Fx-OsZ" firstAttribute="leading" secondItem="aq7-I2-l5n" secondAttribute="leading" constant="20" id="Pd7-Wc-3Bs"/>
-                            <constraint firstItem="aq7-I2-l5n" firstAttribute="trailing" secondItem="Nep-Fx-OsZ" secondAttribute="trailing" constant="20" id="V2d-Fh-53l"/>
-                            <constraint firstItem="Nep-Fx-OsZ" firstAttribute="centerX" secondItem="aq7-I2-l5n" secondAttribute="centerX" id="WtN-dS-66Q"/>
-                            <constraint firstItem="Nep-Fx-OsZ" firstAttribute="top" secondItem="aq7-I2-l5n" secondAttribute="top" constant="30" id="bk8-Hi-OEP"/>
-                            <constraint firstItem="P6U-Kf-zzH" firstAttribute="centerX" secondItem="Nep-Fx-OsZ" secondAttribute="centerX" id="wga-Dk-tOv"/>
+                            <constraint firstItem="VZG-PL-TNq" firstAttribute="top" secondItem="aq7-I2-l5n" secondAttribute="top" constant="30" id="PeK-4G-h1i"/>
+                            <constraint firstItem="aq7-I2-l5n" firstAttribute="trailing" secondItem="VZG-PL-TNq" secondAttribute="trailing" constant="20" id="hEL-AX-b9N"/>
+                            <constraint firstItem="VZG-PL-TNq" firstAttribute="leading" secondItem="aq7-I2-l5n" secondAttribute="leading" constant="20" id="hrj-Jg-qiI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="m6u-cs-S7d">
@@ -128,6 +140,8 @@
                     <connections>
                         <outlet property="cityTF" destination="Nep-Fx-OsZ" id="kWs-i0-6re"/>
                         <outlet property="saveButton" destination="P6U-Kf-zzH" id="KTI-7N-hbs"/>
+                        <outlet property="stateTF" destination="VFc-XO-DEf" id="okn-yC-q4E"/>
+                        <outlet property="zipCodeTF" destination="hW4-tr-grB" id="Pgf-aY-qn1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Syq-l9-7md" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
